@@ -1,0 +1,83 @@
+# INSTRUCTIONS
+Hey this is the initialisation docs. Here are the basic rules:
+1. Anything outside a curly bracket will be treated like a comment(but I use hashes for clarity)
+2. Every curly bracket must have a type (settings, camera, sphere, plane, box, capsule)
+3. The necessity of attributes depends on the type. But here are the attributes
+-pos
+-pos2 (certain types only)
+-size
+-color
+-radiance
+-reflectivity
+-refractivity
+my code should tell you whether the attribute is necessary
+
+4. If there is an error in the code here, my code might catch it. If so, check the terminal and it will give an error message. Otherwise, you are on your own lol.
+5. Do not define floats outside of vectors
+6. All objects here are not optional and there are base cases
+7. My dimension axis are messed up
+positive x goes left
+positive y goes up
+positive z goes away from camera
+
+8. the code is not case sensitive or white space sensitive
+
+
+
+Here is some example code that you can delete
+
+
+# THE ACTUAL CODE
+
+# ambient lighting gives light pollution so dont set it too high
+{
+Type:Settings;
+ambient_light: (0,0,0);
+quick_render: False;
+bounce_depth:2;
+}
+
+{
+Type: Camera;
+pos: (100,100,100);
+}
+
+{
+Type: box;
+pos:(0,0,900);
+size:(400,600,300);
+color:(255,100,100);
+refractivity:1;
+}
+
+{
+Type: Capsule;
+pos:(1000,200,1600);
+pos2: (1000, 700, 1600);
+size:200;
+color:(100,255,100);
+reflectivity:1;
+}
+
+{
+Type: Sphere;
+pos:(-200,600,1600);
+size:500;
+color:(100,100,255);
+}
+
+# planes increase the time to render by alot, so I suggest you get rid of it
+
+Type: Plane;
+pos: 0;
+color: (255,255,255);
+
+
+# This is a light source
+{
+Type: Sphere;
+pos: (-5400, 600, 1200);
+size: 4000;
+color: (255,255,255);
+radiance: 1;
+}
